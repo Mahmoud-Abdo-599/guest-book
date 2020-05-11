@@ -24,6 +24,18 @@ class Messages extends Component {
         this.setState({ messages: [...this.state.messages.filter(message => message.id !== id)] })
     }
 
+    editMessage = (id, message) => {
+        const newMessage = {
+            id: id,
+            title: message
+        }
+        return (
+            this.delMessage(id),
+            this.setState({ messages: [...this.state.messages, newMessage] })
+        )
+
+    }
+
 
     addMessage = (title) => {
         const newMessage = {
@@ -33,7 +45,7 @@ class Messages extends Component {
         this.setState({ messages: [...this.state.messages, newMessage] })
     }
 
-    
+
 
     render() {
 
@@ -42,7 +54,7 @@ class Messages extends Component {
             <div className='messages'>
                 <AddMessage addMessage={this.addMessage} />
                 <MessagesBody messages={this.state.messages}
-                    delMessage={this.delMessage} />
+                    delMessage={this.delMessage} editMessage={this.editMessage} />
 
             </div>
 

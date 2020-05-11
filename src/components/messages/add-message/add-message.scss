@@ -1,6 +1,18 @@
-form-input {
-    padding: 50px;
-    margin: 50px;
-    flex: 10;
-    font-size: larger;
+.form {
+    align-items: center;
+    display: flex;
+    padding: 10px 10px 10px 200px;
+
+
+    .form-inpur{
+        font-size: 166px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 500px;
+        top: 100px;
+        
+  
+    }
+
 }

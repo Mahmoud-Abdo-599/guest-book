@@ -21,10 +21,9 @@ export class AddMessage extends Component {
         return (
             <form onSubmit={this.onSubmit} style={{ display: 'flex' }}>
                 <input
-                    className='form-input'
                     type="text"
                     name="title"
-                    style={{ flex: '10', padding: '5px' }}
+                    style={{ flex: '10', padding: '5px',fontFamily:'Baloo Bhai 2', fontSize:'large' }}
                     placeholder="Add Message ..."
                     value={this.state.title}
                     onChange={this.onChange}
