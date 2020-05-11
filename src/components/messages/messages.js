@@ -25,14 +25,30 @@ class Messages extends Component {
     }
 
     editMessage = (id, message) => {
-        const newMessage = {
-            id: id,
-            title: message
-        }
-        return (
-            this.delMessage(id),
-            this.setState({ messages: [...this.state.messages, newMessage] })
-        )
+        console.log(id, message);
+        const {messages} = this.state;
+        console.log('messages', messages);
+        const objIndex = messages.findIndex(obj => obj.id === id);
+        console.log('objIndex', objIndex);
+        const updatedObj = {...messages[objIndex], title: message};
+
+        const updatedMessages = [
+            ...messages.slice(0, objIndex),
+            updatedObj,
+            ...messages.slice(objIndex + 1),
+        ];
+
+        console.log('updatedMessages', updatedMessages);
+        this.setState({messages: updatedMessages})
+                 
+        // const newMessage = {
+        //     id: id,
+        //     title: message
+        // }
+        // return (
+        //     this.delMessage(id),
+        //     this.setState({ messages: [...this.state.messages, newMessage] })
+        // )
 
     }
 
