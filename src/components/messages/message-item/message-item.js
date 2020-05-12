@@ -43,15 +43,20 @@ export class MessageItem extends Component {
         return (
             <div className='messages'>
                 <Modal
+                    className='modal'
                     isOpen={showEditModal}
                     onRequestClose={this.closeEditModal}
                     contentLabel="Example Modal">
-                    <h2>Edit Message</h2>
-                    <button onClick={this.closeEditModal}>close</button>
-                    <form onSubmit={this.handleEditSubmit}>
-                        <input type='text' defaultValue={title} onChange={this.handleTitleChange} />
-                        <input type='submit' />
-                    </form>
+                    <div className='modal-content'>
+                        <div className='title'>Edit Message</div>
+                        <form className='form-modal' onSubmit={this.handleEditSubmit}>
+                            <input className='input-msg' type='text' defaultValue={title} onChange={this.handleTitleChange} />
+                            <button className='btn-submit' type='submit'>submit</button>
+                        </form>
+                        <div className='btn-close-holder'>
+                            <button className='btn-close' onClick={this.closeEditModal}>close</button>
+                        </div>
+                    </div>
                 </Modal>
                 <div className='message'>
                     <div className='title'>{title}</div>

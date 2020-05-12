@@ -40,15 +40,6 @@ class Messages extends Component {
 
         console.log('updatedMessages', updatedMessages);
         this.setState({messages: updatedMessages})
-                 
-        // const newMessage = {
-        //     id: id,
-        //     title: message
-        // }
-        // return (
-        //     this.delMessage(id),
-        //     this.setState({ messages: [...this.state.messages, newMessage] })
-        // )
 
     }
 
