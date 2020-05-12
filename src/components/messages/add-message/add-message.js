@@ -23,7 +23,7 @@ export class AddMessage extends Component {
                 <input
                     type="text"
                     name="title"
-                    style={{ flex: '10', padding: '5px',fontFamily:'Baloo Bhai 2', fontSize:'large' }}
+                    style={{ flex: '10', padding: '5px',paddingLeft:'20px',fontFamily:'Baloo Bhai 2', fontSize:'1.5rem' }}
                     placeholder="Add Message ..."
                     value={this.state.title}
                     onChange={this.onChange}

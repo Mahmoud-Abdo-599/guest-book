@@ -14,6 +14,7 @@ class Messages extends Component {
             {
                 id: uuid(),
                 title: 'wish you a happy life',
+                commentTitle: ''
             }
         ]
 
@@ -43,11 +44,31 @@ class Messages extends Component {
 
     }
 
+    replyMessage = (id, comment) => {
+        console.log(id, comment);
+        const {messages} = this.state;
+        console.log('messages', messages);
+        const objIndex = messages.findIndex(obj => obj.id === id);
+        console.log('objIndex', objIndex);
+        const updatedObj = {...messages[objIndex], commentTitle: comment};
+
+        const updatedMessages = [
+            ...messages.slice(0, objIndex),
+            updatedObj,
+            ...messages.slice(objIndex + 1),
+        ];
+
+        console.log('updatedMessages', updatedMessages);
+        this.setState({messages: updatedMessages})
+
+    }
+
 
     addMessage = (title) => {
         const newMessage = {
             id: uuid(),
             title,
+            commentTitle:''
         }
         this.setState({ messages: [...this.state.messages, newMessage] })
     }
@@ -59,9 +80,9 @@ class Messages extends Component {
         return (
 
             <div className='messages'>
-                <AddMessage addMessage={this.addMessage} />
+                <AddMessage addMessage={this.addMessage}  />
                 <MessagesBody messages={this.state.messages}
-                    delMessage={this.delMessage} editMessage={this.editMessage} />
+                    delMessage={this.delMessage} editMessage={this.editMessage} replyMessage={this.replyMessage} />
 
             </div>
 

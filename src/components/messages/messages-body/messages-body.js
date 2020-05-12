@@ -7,7 +7,7 @@ export class MessagesBody extends Component {
     render() {
         return this.props.messages.map((message) => (
         <MessageItem key={message.id} message={message}
-        delMessage={this.props.delMessage} editMessage={this.props.editMessage} />
+        delMessage={this.props.delMessage} editMessage={this.props.editMessage} replyMessage={this.props.replyMessage} />
         ));
     }
 }
