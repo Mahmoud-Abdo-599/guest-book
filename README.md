@@ -5,7 +5,7 @@
 Guest Book
 
 ---
-## Project Name
+## Project Image
 
 ![](Project_Image.jpg)
 
