@@ -13,6 +13,9 @@
         align-items: center;
         justify-content: flex-end;
         color: white;
+        &:hover {
+          color: #ffd600;
+        }
     }
   
     .options {
@@ -27,6 +30,9 @@
         font-size: 22px;
         cursor: pointer;
         color: white;
+        &:hover {
+          color: #ffd600;
+        }
       }
     }
   }

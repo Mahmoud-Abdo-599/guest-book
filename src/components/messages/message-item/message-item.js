@@ -62,7 +62,7 @@ export class MessageItem extends Component {
     }
 
     render() {
-        const { id, title, commentTitle } = this.props.message;
+        const { id, title} = this.props.message;
         const { showEditModal1, showEditModal2 } = this.state;
         return (
             <div className='messages'>
